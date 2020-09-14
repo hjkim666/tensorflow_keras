@@ -37,6 +37,9 @@ PyTorch 한국 사용자 그룹 https://www.facebook.com/groups/PyTorchKR/
 데이터사이언스스쿨 https://datascienceschool.net/  
 점프투파이썬  https://wikidocs.net/book/1  
 
+* <CNN 관련 자료>  
+강아지 사진 예제  https://www.facebook.com/kensukekoike/videos/1864061193636311/  
+
 * <유용한사이트>   
 데이터분석 대회 https://www.kaggle.com/  
 
