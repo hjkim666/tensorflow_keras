@@ -40,6 +40,6 @@ PyTorch 한국 사용자 그룹 https://www.facebook.com/groups/PyTorchKR/
 * <유용한사이트>   
 데이터분석 대회 https://www.kaggle.com/  
 
-* <쉬어가는 페이지> 
+* <쉬어가는 페이지>     
 레이커즈와일  https://blog.naver.com/1110-/220847586379
 딥러닝의 대가들  https://jade314.tistory.com/entry/Deep-learning-%EC%9D%98-%EB%8C%80%EA%B0%80%EB%93%A4
