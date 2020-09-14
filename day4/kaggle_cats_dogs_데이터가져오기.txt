@@ -1,0 +1,56 @@
+import os
+os.environ['KAGGLE_USERNAME'] = 'jaen11487'
+os.environ['KAGGLE_KEY'] = '1e7109f613a54cba533ab49ab46927ff'
+!kaggle competitions download -c dogs-vs-cats
+
+
+import zipfile
+import os
+dir_path = 'cat_dog'
+
+if not os.path.exists(dir_path):
+    os.makedirs(dir_path)
+
+with zipfile.ZipFile("train.zip" , "r") as zip_ref:
+    zip_ref.extractall(dir_path)
+
+sub_dirs = ['train', 'test', 'validation']
+label_dirs = ['cats', 'dogs']
+for sub_dir in sub_dirs:
+    for label_dir in label_dirs:
+        os.makedirs(os.path.join(dir_path, sub_dir, label_dir), exist_ok=True)
+
+
+import glob
+import random
+import shutil
+
+files = glob.glob(dir_path + '/train/*.jpg')
+split_ratio = 0.25
+
+for file in files:
+    filename = os.path.basename(file)
+    print('file copying...', file, end='\r')
+    dst_dir = 'train'
+    if random.random() < split_ratio :
+        dst_dir = 'test'
+    if filename.startswith('cats'):
+        dst = os.path.join(dir_path, dst_dir, 'cats', filename)
+    else :
+        dst = os.path.join(dir_path, dst_dir, 'dogs', filename)
+    shutil.copyfile(file, dst)
+
+
+for file in files:
+    filename = os.path.basename(file)
+    print('file copying...', file, end='\r')
+    dst_dir = 'train'
+    if random.random() < split_ratio :
+        dst_dir = 'validation'
+    if filename.startswith('cat'):
+        dst = os.path.join(dir_path, dst_dir, 'cats', filename)
+    else :
+        dst = os.path.join(dir_path, dst_dir, 'dogs', filename)
+    shutil.copyfile(file, dst)
+
+print('copy done.')
